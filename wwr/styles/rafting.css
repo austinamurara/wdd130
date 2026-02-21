@@ -284,4 +284,41 @@ button:hover {
     width: 150px;
     align-items: center;
 
+}.company-info,
+.employees,
+.contact-form {
+    margin: 2rem 0;
+}
+
+.employees {
+    display: flex;
+    gap: 20px;
+}
+
+.employees figure {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+form input,
+form textarea {
+    margin-bottom: 1rem;
+    padding: 8px;
+}
+
+button {
+    background-color: #0077b6;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #023e8a;
 }
