@@ -1,0 +1,50 @@
+/* --- STRICT AUDIT REQUIREMENTS --- */
+
+/* Rule for 'main' */
+main {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+/* Rule for 'h1' with color */
+h1 {
+    color: #003366; 
+}
+
+/* Rule for 'main img' with required box-shadow and padding */
+main img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+/* Rule for 'aside' with all required properties */
+aside {
+    width: 20rem;
+    margin: 1rem auto;
+    border: 1px solid rgb(0 0 0 / 0.2);
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+}
+
+/* Rule for 'aside img' - MUST be exactly 200px */
+aside img {
+    width: 200px;
+    height: auto;
+}
+
+/* Rule for 'p' padding */
+p {
+    padding: 0;
+}
+
+/* Rule for 'footer' layout */
+footer {
+    margin-top: 15px;
+    border-top: 1px solid #000;
+    text-align: center;
+}
