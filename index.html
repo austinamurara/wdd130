@@ -3,30 +3,64 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 130 | Home Page | Austina Murara</title>
-    <meta name="description" content="Course home page for Austina Murara at BYU-Idaho, featuring Zimbabwe.">
+    <title>Home | White Water Rafting</title>
+    <meta name="description" content="Experience the adventure of a lifetime with our guided rafting trips.">
     <meta name="author" content="Austina Murara">
-    <link rel="stylesheet" href="styles/styles.css">
+    <meta
+    http-equiv="refresh" content="0; url=about.html">
+    <link rel="stylesheet" href="styles/rafting.css">
 </head>
 <body>
     <header>
-        <nav>
-            <a href="#">Home</a>
-            <a href="wwr/">Rafting Website</a>
+        <div class="logo-container">
+            <img src="images/river-guide.-logo.png" alt="Rafting Logo" class="logo">
+        </div>
+        <nav class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="trips.html">Trips</a>
+            <a href="contact.html">Contact Us</a>
         </nav>
     </header>
+
     <main>
-        <h1>WDD 130: Austina Murara</h1>
-        <img src="images/profile.jpg" alt="Austina Murara profile picture">
-        <p>My name is Austina Murara and I am excited to be a student at BYU-Idaho. I am currently studying Web Development to build a strong foundation in digital creation. I enjoy the challenge of solving problems through code and seeing a design come to life. In my spare time, I love exploring new technologies. I am committed to working hard this semester to master HTML and CSS so I can create beautiful websites.</p>
+        <section class="hero-container">
+            <div class="hero-text">
+                <h1>Unleash Your Inner Explorer</h1>
+                <p>Join White Water Rafting for the adventure of a lifetime. From family-friendly floats to heart-pumping rapids, we have a trip for everyone.</p>
+                <a href="trips.html" style="display:inline-block; margin-top:20px; padding:10px 20px; background:#d9534f; color:white; text-decoration:none; border-radius:5px;">Book a Trip Now</a>
+            </div>
+            <div class="hero-img-box">
+                <img src="images/hero-image.jpg" alt="Rafting group">
+            </div>
+        </section>
+
+        <section class="why-choose-us">
+            <h2 style="text-align:center; margin-top:40px;">Why Choose Us?</h2>
+            <div class="features-container">
+                <div class="feature-item">
+                    <h3>Expert Guides</h3>
+                    <p>Our guides are certified professionals with years of river experience and safety training.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Top-Tier Gear</h3>
+                    <p>We use the latest high-quality rafts and safety equipment for every single excursion.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Eco-Friendly</h3>
+                    <p>We are dedicated to preserving the river ecosystems for future generations of adventurers.</p>
+                </div>
+            </div>
+        </section>
     </main>
-    <aside>
-        <h2>Zimbabwe</h2>
-        <img src="images/state-image.jpg" alt="Zimbabwe landmark">
-        <p>Zimbabwe is a stunning country in Southern Africa known for its rich history and natural wonders. It is home to the mighty Victoria Falls and the Great Zimbabwe ruins. Beyond these landmarks, Zimbabwe is famous for its diverse wildlife and warm hospitality.</p>
-    </aside>
+
     <footer>
-        <p>&copy; 2026 | Austina Murara | Zimbabwe</p>
+        <p>© 2026 White Water Rafting | Austina Murara</p>
+        <div class="social-container">
+            <a href="#"><img src="images/facebook.png" alt="FB"></a>
+            <a href="#"><img src="images/instagram.png" alt="IG"></a>
+            <a href="#"><img src="images/linkedin.png" alt="LI"></a>
+        </div>
     </footer>
 </body>
 </html>
