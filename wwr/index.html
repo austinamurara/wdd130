@@ -6,16 +6,14 @@
     <title>Home | White Water Rafting</title>
     <meta name="description" content="Experience the adventure of a lifetime with our guided rafting trips.">
     <meta name="author" content="Austina Murara">
-    <meta
-    http-equiv="refresh" content="0; url=about.html">
     <link rel="stylesheet" href="styles/rafting.css">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="images/river-guide.-logo.png" alt="Rafting Logo" class="logo">
+            <img src="images/river-guide-logo.png" alt="Rafting Logo" class="logo">
         </div>
-        <nav class="nav-container">
+        <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="trips.html">Trips</a>
@@ -24,43 +22,59 @@
     </header>
 
     <main>
-        <section class="hero-container">
-            <div class="hero-text">
+        <section class="hero">
+            <img src="images/hero-image.jpg" alt="Rafting group on a wild river">
+            <article class="hero-msg">
                 <h1>Unleash Your Inner Explorer</h1>
-                <p>Join White Water Rafting for the adventure of a lifetime. From family-friendly floats to heart-pumping rapids, we have a trip for everyone.</p>
-                <a href="trips.html" style="display:inline-block; margin-top:20px; padding:10px 20px; background:#d9534f; color:white; text-decoration:none; border-radius:5px;">Book a Trip Now</a>
-            </div>
-            <div class="hero-img-box">
-                <img src="images/hero-image.jpg" alt="Rafting group">
-            </div>
+                <p>Join White Water Rafting for the adventure of a lifetime. From family-friendly floats to heart-pumping rapids.</p>
+                <a href="trips.html" class="cta-button">Book a Trip Now</a>
+            </article>
         </section>
 
-        <section class="why-choose-us">
-            <h2 style="text-align:center; margin-top:40px;">Why Choose Us?</h2>
-            <div class="features-container">
-                <div class="feature-item">
-                    <h3>Expert Guides</h3>
-                    <p>Our guides are certified professionals with years of river experience and safety training.</p>
+        <section class="newsletter">
+            <h2>Join Our Adventure Newsletter</h2>
+            <p>Get the latest updates on river conditions and special trip discounts.</p>
+            <form action="#" method="post">
+                <div class="form-item">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="user_name" required>
                 </div>
-                <div class="feature-item">
-                    <h3>Top-Tier Gear</h3>
-                    <p>We use the latest high-quality rafts and safety equipment for every single excursion.</p>
+                <div class="form-item">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="user_email" required>
                 </div>
-                <div class="feature-item">
-                    <h3>Eco-Friendly</h3>
-                    <p>We are dedicated to preserving the river ecosystems for future generations of adventurers.</p>
-                </div>
+                <button type="submit">Sign Me Up!</button>
+            </form>
+        </section>
+
+        <section class="home-grid">
+            <div class="grid-item">
+                <img src="images/rafting-safety.jpg" alt="Safety gear and briefing">
+                <h2>Expert Guides & Safety</h2>
+                <p>Our guides are certified professionals with years of river experience and safety training. We use top-tier gear for every excursion.</p>
+            </div>
+            <div class="grid-item">
+                <img src="images/river-scenery.jpg" alt="Beautiful river canyon">
+                <h2>Eco-Friendly Adventures</h2>
+                <p>We are dedicated to preserving the river ecosystems. Explore canyons and rivers that few people ever get to see while leaving no trace.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 White Water Rafting | Austina Murara</p>
-        <div class="social-container">
-            <a href="#"><img src="images/facebook.png" alt="FB"></a>
-            <a href="#"><img src="images/instagram.png" alt="IG"></a>
-            <a href="#"><img src="images/linkedin.png" alt="LI"></a>
-        </div>
-    </footer>
+    <p>© 2026 | Austina Murara | White Water Rafting</p>
+
+    <div class="social-container">
+        <a href="https://facebook.com" target="_blank">
+            <img src="images/facebook.png" alt="Facebook icon">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="images/instagram.png" alt="Instagram icon">
+        </a>
+        <a href="https://linkedin.com" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn icon">
+        </a>
+    </div>
+</footer>
 </body>
 </html>
