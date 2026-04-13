@@ -162,10 +162,10 @@ nav a:hover {
     color: var(--accent2-color);
 }
 
-/* --- CONTACT PAGE FIXES (Add these to fix the expert images and social icons) --- */
+/* --- CONTACT PAGE FIXES --- */
 
 .employee-profiles {
-    display: flex;            /* Makes experts go horizontal */
+    display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
@@ -186,7 +186,7 @@ nav a:hover {
 
 footer {
     display: flex;
-    justify-content: space-between; /* Copyright left, Socials right */
+    justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
 }
@@ -197,20 +197,28 @@ footer {
 }
 
 .socialmedia img {
-    width: 25px; /* Keeps social icons small and fixes the giant blue bar */
+    width: 25px; 
     height: auto;
 }
-/* --- About Us: Adventure Gallery Fix --- */
+
+/* --- About Us: Adventure Gallery --- */
 .adventure-gallery {
-    display: flex;           /* Turns the stack into a row */
-    justify-content: center; /* Centers the images on the page */
-    gap: 10px;               /* Adds a small gap between pictures */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     margin: 20px 0;
 }
 
 .adventure-gallery img {
-    width: 24%;              /* 4 images x 24% = 96%, leaving room for gaps */
-    height: 250px;           /* Makes all images the same height */
-    object-fit: cover;       /* Prevents images from looking squashed */
-    border-radius: 5px;      /* Matches the professional look of your site */
+    width: 24%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* --- NEW: MAP IFRAME FIX (Solves Inline Style Error) --- */
+iframe {
+    border: none;
+    display: block;
+    margin: 20px auto;
 }
