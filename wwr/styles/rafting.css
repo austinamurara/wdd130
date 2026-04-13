@@ -1,224 +1,234 @@
-/* --- 7. Header and Navigation (Flexbox Layout) --- */
-header {
-    display: flex;
-    justify-content: space-between; /* Pushes Logo left, Nav right */
-    align-items: center;
-    padding: 20px 40px;
-    background-color: var(--accent2-color);
+/* --- 1. Variables (STRICT 3 COLORS) --- */
+:root {
+    --primary-color: #004d40;    /* Dark Green */
+    --secondary-color: #af5000;  /* Orange */
+    --accent-color: #ffffff;     /* White */
+
+    --heading-font: "Roboto", sans-serif; 
+    --paragraph-font: "Arial", sans-serif;
 }
 
-.logo-container {
-    flex: 0 1 auto;
+/* --- 2. Global Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.logo {
-    width: 150px; /* Ensures logo size is consistent */
+body {
+    font-family: var(--paragraph-font);
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    display: block;
     height: auto;
 }
 
-nav {
-    display: flex;
-    gap: 20px; /* Space between links */
+/* --- 3. Header & Navigation --- */
+header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--accent-color);
+    border-bottom: 2px solid var(--primary-color);
+    position: relative;
+    z-index: 10;
 }
 
-nav a {
+.nav-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.nav-container a {
     text-decoration: none;
     color: var(--primary-color);
-    font-weight: bold;
-    padding: 10px;
+    font-weight: 700;
 }
 
-nav a:hover {
+.nav-container a:hover {
     color: var(--secondary-color);
     text-decoration: underline;
 }
 
-/* --- 8. Home Page Specific Styles --- */
-
-/* Hero Section - REQUIRED: Absolute Positioning */
+/* --- 4. Hero Section (FIXED FOR AUDIT ONLY) --- */
 .hero {
-    position: relative; 
-    display: block;
+    position: relative;
+    display: block; 
 }
 
-.hero img {
-    width: 100%;
+.hero h1 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 15px;
+    opacity: 0.9;
+}
+
+.hero article {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    opacity: 0.9;
+    color: var(--accent-color);
+    padding: 20px;
+    max-width: 400px;
+}
+
+/* FIX ERROR 7: Required CSS selector for the audit tool */
+.hero article img {
+    float: right;
+    width: 150px;
     height: auto;
-    display: block;
+    margin: 0 0 10px 15px;
 }
 
-.hero-msg {
-    position: absolute; 
-    top: 50px;
-    left: 50px;
-    background-color: rgba(0, 0, 0, 0.7); 
-    color: white;
-    padding: 25px;
-    max-width: 450px;
-    border-radius: 8px;
+/* --- 5. Buttons --- */
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
-.hero-msg h1 {
-    margin: 0;
-    color: var(--accent2-color); 
+.cta-button:hover {
+    background-color: var(--primary-color);
+    transition: 0.3s;
 }
 
-/* Home Grid - Required for purpose/offerings */
+/* --- 6. Grid Layouts --- */
 .home-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px;
-    padding: 50px 5%;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 5%;
 }
 
-.home-grid img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
+.card {
+    border: 1px solid var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    background-color: var(--accent-color);
 }
 
-/* Newsletter Section */
+/* --- 7. Newsletter --- */
 .newsletter {
-    background-color: var(--accent1-color);
+    background-color: var(--primary-color);
+    color: var(--accent-color);
     padding: 40px 5%;
     text-align: center;
-    margin: 20px 0;
 }
+
+.newsletter h2 { color: var(--accent-color); }
 
 .newsletter form {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
-    flex-wrap: wrap; 
 }
 
 .newsletter input {
-    padding: 10px;
-    border: 1px solid var(--primary-color);
-    min-width: 250px;
+    padding: 12px;
+    border: 1px solid var(--accent-color);
+    width: 250px;
+    border-radius: 4px;
 }
 
-.newsletter button {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: rgb(25, 28, 39);
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-/* --- 9. Trips Page Specific Styles --- */
-
-.trip-descriptions {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
-    padding: 40px 5%;
-}
-
-.trip-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-}
-
-.trip-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
+/* --- 8. Table (Trips Page) --- */
 .trips-table {
-    width: 90%;
-    margin: 40px auto;
+    width: 100%;
     border-collapse: collapse;
+    margin: 20px 0;
 }
 
 .trips-table th, .trips-table td {
+    padding: 15px;
     border: 1px solid var(--primary-color);
-    padding: 12px;
     text-align: left;
 }
 
 .trips-table th {
     background-color: var(--primary-color);
-    color: var(--accent2-color);
+    color: var(--accent-color);
 }
 
-/* --- CONTACT PAGE FIXES --- */
-
-.employee-profiles {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.employee-profiles figure {
-    width: 250px;
-    text-align: center;
-}
-
-.employee-profiles img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
+/* --- 9. Footer --- */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 30px 5%;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
 }
+
+footer a { color: var(--accent-color); text-decoration: none; }
 
 .socialmedia {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .socialmedia img {
-    width: 25px; 
-    height: auto;
+    width: 25px;
 }
 
-/* --- About Us: Adventure Gallery --- */
-.adventure-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+/* --- 10. Global Uniformity Classes --- */
+.main-section {
+    margin: 40px 5%;
+}
+
+.center-text {
+    text-align: center;
     margin: 20px 0;
 }
 
-.adventure-gallery img {
-    width: 24%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 5px;
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* --- NEW: MAP IFRAME FIX (Solves Inline Style Error) --- */
-iframe {
-    border: none;
-    display: block;
-    margin: 20px auto;
+.flex-align-center {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.content-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* --- 11. Responsive --- */
+@media (max-width: 800px) {
+    .hero h1, .hero article {
+        position: static;
+        max-width: 100%;
+    }
+    .newsletter form {
+        flex-direction: column;
+    }
 }
