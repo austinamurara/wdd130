@@ -1,7 +1,7 @@
 /* --- 1. Variables (STRICT 3 COLORS) --- */
 :root {
     --primary-color: #004d40;    /* Dark Green */
-    --secondary-color: #ffffff;  /* white */
+    --secondary-color: #ffffff;  /* White */
     --accent-color: #ffffff;     /* White */
 
     --heading-font: "Roboto", sans-serif; 
@@ -24,7 +24,6 @@ body {
 
 h1, h2, h3, h4 {
     font-family: var(--heading-font);
-    color: var(--primary-color);
 }
 
 img {
@@ -33,10 +32,10 @@ img {
     height: auto;
 }
 
-/* --- 3. Header & Navigation --- */
+/* --- 3. Header & Navigation (FIXED RIGHT ALIGNMENT) --- */
 header {
-    display: grid;
-    grid-template-columns: 150px 1fr;
+    display: flex; /* Changed to Flex for easier right-alignment */
+    justify-content: space-between; 
     align-items: center;
     padding: 20px 5%;
     background-color: var(--accent-color);
@@ -47,8 +46,9 @@ header {
 
 .nav-container {
     display: flex;
-    justify-content: flex-end;
+    list-style: none;
     gap: 30px;
+    margin-left: auto; /* This pushes the nav to the far right */
 }
 
 .nav-container a {
@@ -58,14 +58,19 @@ header {
 }
 
 .nav-container a:hover {
-    color: var(--secondary-color);
     text-decoration: underline;
 }
 
-/* --- 4. Hero Section (FIXED FOR AUDIT ONLY) --- */
+/* --- 4. Hero Section (FIXED OVERLAPPING & STACKING) --- */
 .hero {
     position: relative;
-    display: block; 
+    display: block;
+    overflow: hidden; /* Keeps everything contained */
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
 }
 
 .hero h1 {
@@ -73,45 +78,55 @@ header {
     top: 30px;
     left: 30px;
     background-color: var(--primary-color);
-    color: var(--accent-color);
+    color: var(--secondary-color);
     padding: 15px;
     opacity: 0.9;
+    z-index: 5;
 }
 
-.hero article {
+/* This targets the class "hero-msg" from your HTML */
+.hero-msg {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    bottom: 50px;
+    right: 50px;
     background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 25px;
+    max-width: 450px;
     opacity: 0.9;
-    color: var(--accent-color);
-    padding: 20px;
-    max-width: 400px;
+    z-index: 5;
+
+    /* THE FIX: Flexbox forces the H1, P, and Button to stay in their own rows */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds space so they don't touch or overlap */
 }
 
-/* FIX ERROR 7: Required CSS selector for the audit tool */
-.hero article img {
-    float: right;
-    width: 150px;
-    height: auto;
-    margin: 0 0 10px 15px;
+.hero-msg h1 {
+    position: static; /* Removes absolute position inside the flex box */
+    padding: 0;
+    background: none;
+    font-size: 2rem;
 }
 
-/* --- 5. Buttons --- */
+/* --- 5. Buttons (FIXED VISIBILITY & LAYOUT) --- */
 .cta-button {
     display: inline-block;
     padding: 12px 25px;
-    background-color: var(--secondary-color);
-    color: var(--accent-color);
+    background-color: #af5000; /* Orange color for high contrast */
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     border: none;
     cursor: pointer;
+    width: fit-content; /* Prevents button from stretching full width */
+    text-align: center;
 }
 
 .cta-button:hover {
     background-color: var(--primary-color);
+    color: var(--secondary-color);
     transition: 0.3s;
 }
 
@@ -120,7 +135,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 20px 5%;
+    padding: 40px 5%;
 }
 
 .card {
@@ -130,15 +145,19 @@ header {
     background-color: var(--accent-color);
 }
 
-/* --- 7. Newsletter --- */
+/* --- 7. Newsletter (FIXED SPACING) --- */
 .newsletter {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    padding: 40px 5%;
+    background-color: #e0f2f1; /* Light teal to distinguish from the Hero */
+    color: var(--primary-color);
+    padding: 60px 5%;
     text-align: center;
+    position: relative; /* Ensures it stays in flow below the hero */
 }
 
-.newsletter h2 { color: var(--accent-color); }
+.newsletter h2 { 
+    color: var(--primary-color); 
+    margin-bottom: 10px;
+}
 
 .newsletter form {
     display: flex;
@@ -149,7 +168,7 @@ header {
 
 .newsletter input {
     padding: 12px;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--primary-color);
     width: 250px;
     border-radius: 4px;
 }
@@ -169,28 +188,31 @@ header {
 
 .trips-table th {
     background-color: var(--primary-color);
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
-/* --- 9. Footer --- */
+/* --- 9. Footer (FIXED HORIZONTAL SOCIALS) --- */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 5%;
     background-color: var(--primary-color);
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
-footer a { color: var(--accent-color); text-decoration: none; }
+footer a { color: var(--secondary-color); text-decoration: none; }
 
 .socialmedia {
     display: flex;
+    flex-direction: row; /* Forces horizontal alignment */
     gap: 20px;
+    align-items: center;
 }
 
 .socialmedia img {
     width: 25px;
+    height: auto;
 }
 
 /* --- 10. Global Uniformity Classes --- */
@@ -203,31 +225,24 @@ footer a { color: var(--accent-color); text-decoration: none; }
     margin: 20px 0;
 }
 
-.flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.flex-align-center {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.content-img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
 /* --- 11. Responsive --- */
 @media (max-width: 800px) {
-    .hero h1, .hero article {
+    .hero-msg {
         position: static;
         max-width: 100%;
+        margin: 20px;
     }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-container {
+        margin-left: 0;
+        justify-content: center;
+    }
+
     .newsletter form {
         flex-direction: column;
     }
