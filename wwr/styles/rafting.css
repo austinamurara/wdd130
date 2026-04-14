@@ -1,8 +1,8 @@
 /* --- 1. Variables (STRICT 3 COLORS) --- */
 :root {
-    --primary-color: #004d40;    /* Dark Green */
-    --secondary-color: #ffffff;  /* White */
-    --accent-color: #ffffff;     /* White */
+    --primary-color: #004d40;
+    --secondary-color: #ffffff;
+    --accent-color: #ffffff;
 
     --heading-font: "Roboto", sans-serif; 
     --paragraph-font: "Arial", sans-serif;
@@ -32,9 +32,9 @@ img {
     height: auto;
 }
 
-/* --- 3. Header & Navigation (FIXED RIGHT ALIGNMENT) --- */
+/* --- 3. Header & Navigation --- */
 header {
-    display: flex; /* Changed to Flex for easier right-alignment */
+    display: flex;
     justify-content: space-between; 
     align-items: center;
     padding: 20px 5%;
@@ -48,7 +48,7 @@ header {
     display: flex;
     list-style: none;
     gap: 30px;
-    margin-left: auto; /* This pushes the nav to the far right */
+    margin-left: auto;
 }
 
 .nav-container a {
@@ -61,11 +61,11 @@ header {
     text-decoration: underline;
 }
 
-/* --- 4. Hero Section (FIXED OVERLAPPING & STACKING) --- */
+/* --- 4. Hero Section --- */
 .hero {
     position: relative;
     display: block;
-    overflow: hidden; /* Keeps everything contained */
+    overflow: hidden;
 }
 
 .hero img {
@@ -84,7 +84,7 @@ header {
     z-index: 5;
 }
 
-/* This targets the class "hero-msg" from your HTML */
+/* KEEP your original (safe if used in HTML) */
 .hero-msg {
     position: absolute;
     bottom: 50px;
@@ -95,32 +95,49 @@ header {
     max-width: 450px;
     opacity: 0.9;
     z-index: 5;
-
-    /* THE FIX: Flexbox forces the H1, P, and Button to stay in their own rows */
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Adds space so they don't touch or overlap */
+    gap: 15px;
 }
 
 .hero-msg h1 {
-    position: static; /* Removes absolute position inside the flex box */
+    position: static;
     padding: 0;
     background: none;
     font-size: 2rem;
 }
 
-/* --- 5. Buttons (FIXED VISIBILITY & LAYOUT) --- */
+/* ✅ AUDIT FIX: REQUIRED SELECTORS */
+.hero article {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 25px;
+    max-width: 450px;
+    opacity: 0.9;
+    z-index: 5;
+}
+
+.hero article img {
+    float: right;
+    margin-left: 15px;
+    width: 120px;
+}
+
+/* --- 5. Buttons --- */
 .cta-button {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #af5000; /* Orange color for high contrast */
+    background-color: #af5000;
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    width: fit-content; /* Prevents button from stretching full width */
+    width: fit-content;
     text-align: center;
 }
 
@@ -145,13 +162,13 @@ header {
     background-color: var(--accent-color);
 }
 
-/* --- 7. Newsletter (FIXED SPACING) --- */
+/* --- 7. Newsletter --- */
 .newsletter {
-    background-color: #e0f2f1; /* Light teal to distinguish from the Hero */
+    background-color: #e0f2f1;
     color: var(--primary-color);
     padding: 60px 5%;
     text-align: center;
-    position: relative; /* Ensures it stays in flow below the hero */
+    position: relative;
 }
 
 .newsletter h2 { 
@@ -173,7 +190,7 @@ header {
     border-radius: 4px;
 }
 
-/* --- 8. Table (Trips Page) --- */
+/* --- 8. Table --- */
 .trips-table {
     width: 100%;
     border-collapse: collapse;
@@ -191,7 +208,7 @@ header {
     color: var(--secondary-color);
 }
 
-/* --- 9. Footer (FIXED HORIZONTAL SOCIALS) --- */
+/* --- 9. Footer --- */
 footer {
     display: flex;
     justify-content: space-between;
@@ -201,11 +218,14 @@ footer {
     color: var(--secondary-color);
 }
 
-footer a { color: var(--secondary-color); text-decoration: none; }
+footer a { 
+    color: var(--secondary-color); 
+    text-decoration: none; 
+}
 
 .socialmedia {
     display: flex;
-    flex-direction: row; /* Forces horizontal alignment */
+    flex-direction: row;
     gap: 20px;
     align-items: center;
 }
@@ -215,7 +235,7 @@ footer a { color: var(--secondary-color); text-decoration: none; }
     height: auto;
 }
 
-/* --- 10. Global Uniformity Classes --- */
+/* --- 10. Utility --- */
 .main-section {
     margin: 40px 5%;
 }
